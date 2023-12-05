@@ -90,7 +90,7 @@ public class WelcomeFrame extends JFrame implements ActionListener {
             String dataStudentNum = studentNumField.getText();
             String dataPassword = passwordField.getText();
             System.out.println("Data submitted - StudentNum: " + dataStudentNum + ", Password: " + dataPassword);
-            // Add your code to store or process the collected data
+            
         }
     }
 
