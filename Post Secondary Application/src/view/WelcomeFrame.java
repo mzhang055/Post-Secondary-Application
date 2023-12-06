@@ -14,9 +14,12 @@ import javax.swing.JLayeredPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
+import model.StudentData;
+
 public class WelcomeFrame extends JFrame implements ActionListener {
     private JTextField studentNumField;
     private JTextField passwordField;
+    private StudentData studentData; //create an instance of StudentData class
 
     public WelcomeFrame() {
         // Set up the frame
@@ -34,7 +37,7 @@ public class WelcomeFrame extends JFrame implements ActionListener {
         Dimension imageSize = new Dimension(backgroundImg.getIconWidth(), backgroundImg.getIconHeight());
         imageLabel.setPreferredSize(imageSize);
 
-        // Add login text fields
+        // add login text fields
         studentNumField = new JTextField();  // Instantiate the JTextField
         studentNumField.setBounds(290, 1425, 800, 80);
         studentNumField.addActionListener(this);
@@ -80,18 +83,19 @@ public class WelcomeFrame extends JFrame implements ActionListener {
         if (e.getSource() == studentNumField) {
             // Handle data from studentNumField
             String dataStudentNum = studentNumField.getText();
+            studentData.setStudentNumber(dataStudentNum);
             System.out.println("Data from studentNumField: " + dataStudentNum);
         } else if (e.getSource() == passwordField) {
             // Handle data from passwordField
             String dataPassword = passwordField.getText();
+            studentData.setPassword(dataPassword);
             System.out.println("Data from passwordField: " + dataPassword);
         } else if (e.getSource() instanceof JButton) {
             // Handle button click (submitButton)
-            String dataStudentNum = studentNumField.getText();
-            String dataPassword = passwordField.getText();
+            String dataStudentNum = studentData.getStudentNumber();
+            String dataPassword = studentData.getPassword();
             System.out.println("Data submitted - StudentNum: " + dataStudentNum + ", Password: " + dataPassword);
-            
+
         }
     }
-
 }
