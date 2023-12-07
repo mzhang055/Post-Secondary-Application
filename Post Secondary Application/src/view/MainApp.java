@@ -11,8 +11,8 @@ public class MainApp {
             NavigationBarPanel navBarPanel = new NavigationBarPanel();
             frame.getContentPane().add(navBarPanel);
 
-            frame.setSize(1440, 900);  // Adjust the size as needed
-            frame.setLocationRelativeTo(null);  // Center the frame
+            frame.setSize(1440, 900);  
+            frame.setLocationRelativeTo(null);  
             frame.setVisible(true);
         });
     }

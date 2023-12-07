@@ -39,7 +39,7 @@ public class NavigationBarPanel extends JPanel implements ActionListener {
 		profileBtn.setForeground(fontColor);
 
 		// set layout manager and space out buttons
-		setLayout(new FlowLayout(FlowLayout.CENTER, 90, 10));
+		setLayout(new FlowLayout(FlowLayout.CENTER, 70, 10));
 
 		// add buttons to panel
 		add(homeBtn);
@@ -110,5 +110,17 @@ public class NavigationBarPanel extends JPanel implements ActionListener {
 			System.out.println("profile btn blicked"); // replace
 		}
 	}
+	
+	public static void main(String[] args) {
+		 JFrame frame = new JFrame("Navigation Bar Test");
+         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+         NavigationBarPanel navBarPanel = new NavigationBarPanel();
+         frame.getContentPane().add(navBarPanel);
+
+         frame.setSize(1440, 900);  
+         frame.setLocationRelativeTo(null);  
+         frame.setVisible(true);
+         frame.setBackground(Color.RED);
+	}
 }
